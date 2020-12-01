@@ -27,6 +27,6 @@ jobs:
         git commit -s -m "build: it's ${nextyear} time"
         git push
       env:
-        GITHUB_EMAIL: ${{ secrets.GITHUB_EMAIL }}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_KEY }}
-        GITHUB_USER: ${{ secrets.GITHUB_USER }}
+        GITHUB_EMAIL: ${{ secrets.EMAIL }}
+        GITHUB_TOKEN: ${{ secrets.KEY }}
+        GITHUB_USER: ${{ secrets.USER }}
