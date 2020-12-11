@@ -1,0 +1,30 @@
+#!/bin/bash
+
+export GITHUB_USER=""
+export GITHUB_EMAIL=""
+
+export device=""
+
+export ROM=""
+export ROM_DIR=""
+export ROM_VERSION=""
+export official="false"
+export local_manifest_url=""
+export manifest_url=""
+export rom_vendor_name=""
+export branch=""
+export bacon="bacon"
+export buildtype=""
+export clean=""
+export upload_recovery=""
+export upload_boot=""
+export repo_name=""
+export repo_owner=""
+export gitea_url=""
+
+export ccache=""
+export ccache_size=""
+
+export jenkins="false"
+
+export timezone="UTC"
