@@ -9,6 +9,7 @@ else
 	telegram -M "Build started for ${device}"
 fi
 source build/envsetup.sh
+source "${my_dir}/${my_txt}
 source "${my_dir}/sourceforgeconfig.sh"
 if [ "${official}" == "true" ]; then
 	export CUSTOM_BUILD_TYPE="OFFICIAL"
