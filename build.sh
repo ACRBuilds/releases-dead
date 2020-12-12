@@ -70,7 +70,7 @@ if [ -e "${finalzip_path}" ]; then
 	fi
 
 	if [ "${upload_boot}" == "true" ]; then
-		if [ -e "${img_path}" ]; then
+		if [ -e "${boot_path}" ]; then
 			drone-gitea-release --api-key "${GITEA_TOKEN}" --repo.owner "${repo_owner}" --repo.name "${repo_name}"  --commit.ref "${tag}" --base-url "${gitea_url}"  --title "${tag}" --note "${ROM} for ${device} Date: $(env TZ="${timezone}" date)" --files "${boot_path}"
 		else
 			echo "Build failed in $((BUILD_DIFF / 60)) minute(s) and $((BUILD_DIFF % 60)) seconds"
@@ -91,13 +91,13 @@ if [ -e "${finalzip_path}" ]; then
 
 		Download ROM via Gitea: ["${zip_name}"]("${gitea_url}/${repo_owner}/${repo_name}/download/${tag}/${zip_name}")
 		Download ROM via Sourceforge: ["${zip_name}"]("https://sourceforge.net/projects/${sourceforgeprojekt}/files/${sourceforgefolder}/${zip_name}/download")
-		Download recovery: ["recovery.img"]("${gitea_url}/${repo_owner}/${repo_name}/download/${tag}/${zip_name}/recovery.img")"
+		Download recovery: ["recovery.img"]("${gitea_url}/${repo_owner}/${repo_name}/download/${tag}/recovery.img")"
 	elif [ "${upload_boot}" == "true" ]; then
 		telegram -M "Build completed successfully in $((BUILD_DIFF / 60)) minute(s) and $((BUILD_DIFF % 60)) seconds
 
 		Download ROM via Gitea: ["${zip_name}"]("${gitea_url}/${repo_owner}/${repo_name}/download/${tag}/${zip_name}")
 		Download ROM via Sourceforge: ["${zip_name}"]("https://sourceforge.net/projects/${sourceforgeprojekt}/files/${sourceforgefolder}/${zip_name}/download")
-		Download boot: ["boot.img"]("${gitea_url}/${repo_owner}/${repo_name}/download/${tag}/${zip_name}/boot.img")"
+		Download boot: ["boot.img"]("${gitea_url}/${repo_owner}/${repo_name}/download/${tag}/boot.img")"
 	else
 		telegram -M "Build completed successfully in $((BUILD_DIFF / 60)) minute(s) and $((BUILD_DIFF % 60)) seconds
 
