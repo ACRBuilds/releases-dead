@@ -1,0 +1,30 @@
+#!/bin/bash
+
+export GITHUB_USER="kiam001"
+export GITHUB_EMAIL="gitea@kiam001.tk"
+
+export device="cedric"
+
+export ROM="Colt-Enigma"
+export ROM_DIR="${WORKSPACE}/work"
+export ROM_VERSION="v6.5 Euphoria"
+export official="false"
+export local_manifest_url="https://gitea.kiam001.tk/Buildtools/manifests/raw/branch/master/cedric.xml"
+export manifest_url="https://github.com/Colt-Enigma/platform_manifest"
+export rom_vendor_name="clot"
+export branch="c10"
+export bacon="colt"
+export buildtype=""
+export clean="installclean"
+export upload_recovery="false"
+export upload_boot="false"
+export repo_name="releases"
+export repo_owner="Buildtools"
+export gitea_url="https://gitea.kiam001.tk"
+
+export ccache="true"
+export ccache_size="100"
+
+export jenkins="true"
+
+export timezone="UTC"
