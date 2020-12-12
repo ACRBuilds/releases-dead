@@ -3,7 +3,7 @@
 export my_dir=$(pwd)
 
 echo "Loading configuration..."
-source "${my_dir}/${my_txt}
+source "${my_dir}/${my_txt}"
 
 if [ -z "${GITEA_TOKEN}" ]; then
     echo "Please set GITEA_TOKEN before continuing."
