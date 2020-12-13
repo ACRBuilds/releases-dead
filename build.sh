@@ -89,19 +89,19 @@ if [ -e "${finalzip_path}" ]; then
 	if [ "${upload_recovery}" == "true" ]; then
 		telegram -M "Build completed successfully in $((BUILD_DIFF / 60)) minute(s) and $((BUILD_DIFF % 60)) seconds
 
-		Download ROM via Gitea: ["${zip_name}"]("${gitea_url}/${repo_owner}/${repo_name}/download/${tag}/${zip_name}")
+		Download ROM via Gitea: ["${zip_name}"]("${gitea_url}/${repo_owner}/${repo_name}/releases/download/${tag}/${zip_name}")
 		Download ROM via Sourceforge: ["${zip_name}"]("https://sourceforge.net/projects/${sourceforgeprojekt}/files/${sourceforgefolder}/${zip_name}/download")
-		Download recovery: ["recovery.img"]("${gitea_url}/${repo_owner}/${repo_name}/download/${tag}/recovery.img")"
+		Download recovery: ["recovery.img"]("${gitea_url}/${repo_owner}/${repo_name}/releases/download/${tag}/recovery.img")"
 	elif [ "${upload_boot}" == "true" ]; then
 		telegram -M "Build completed successfully in $((BUILD_DIFF / 60)) minute(s) and $((BUILD_DIFF % 60)) seconds
 
-		Download ROM via Gitea: ["${zip_name}"]("${gitea_url}/${repo_owner}/${repo_name}/download/${tag}/${zip_name}")
+		Download ROM via Gitea: ["${zip_name}"]("${gitea_url}/${repo_owner}/${repo_name}/releases/download/${tag}/${zip_name}")
 		Download ROM via Sourceforge: ["${zip_name}"]("https://sourceforge.net/projects/${sourceforgeprojekt}/files/${sourceforgefolder}/${zip_name}/download")
-		Download boot: ["boot.img"]("${gitea_url}/${repo_owner}/${repo_name}/download/${tag}/boot.img")"
+		Download boot: ["boot.img"]("${gitea_url}/${repo_owner}/${repo_name}/download/releases/${tag}/boot.img")"
 	else
 		telegram -M "Build completed successfully in $((BUILD_DIFF / 60)) minute(s) and $((BUILD_DIFF % 60)) seconds
 
-		Download ROM via Gitea: ["${zip_name}"]("${gitea_url}/${release_repo}/releases/download/${tag}/${zip_name}")
+		Download ROM via Gitea: ["${zip_name}"]("${gitea_url}/${repo_owner}/${repo_name}/releases/download/${tag}/${zip_name}")
 		Download ROM via Sourceforge: ["${zip_name}"]("https://sourceforge.net/projects/${sourceforgeprojekt}/files/${sourceforgefolder}/${zip_name}/download")"
 	fi
 	curl --data parse_mode=HTML --data chat_id=$TELEGRAM_CHAT --data sticker=CAADBQADGgEAAixuhBPbSa3YLUZ8DBYE --request POST https://api.telegram.org/bot$TELEGRAM_TOKEN/sendSticker
