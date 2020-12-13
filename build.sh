@@ -97,7 +97,7 @@ if [ -e "${finalzip_path}" ]; then
 
 		Download ROM via Gitea: ["${zip_name}"]("${gitea_url}/${repo_owner}/${repo_name}/releases/download/${tag}/${zip_name}")
 		Download ROM via Sourceforge: ["${zip_name}"]("https://sourceforge.net/projects/${sourceforgeprojekt}/files/${sourceforgefolder}/${zip_name}/download")
-		Download boot: ["boot.img"]("${gitea_url}/${repo_owner}/${repo_name}/download/releases/${tag}/boot.img")"
+		Download boot: ["boot.img"]("${gitea_url}/${repo_owner}/${repo_name}/releases/download/${tag}/boot.img")"
 	else
 		telegram -M "Build completed successfully in $((BUILD_DIFF / 60)) minute(s) and $((BUILD_DIFF % 60)) seconds
 
