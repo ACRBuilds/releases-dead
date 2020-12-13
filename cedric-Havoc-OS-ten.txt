@@ -21,6 +21,7 @@ export upload_boot="false"
 export repo_name="releases"
 export repo_owner="Buildtools"
 export gitea_url="https://gitea.kiam001.tk"
+export TEMPORARY_DISABLE_PATH_RESTRICTIONS=true
 
 export ccache="true"
 export ccache_size="100"
