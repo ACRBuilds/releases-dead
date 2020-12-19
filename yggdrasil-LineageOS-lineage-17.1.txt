@@ -3,7 +3,7 @@
 export GITHUB_USER="kiam001"
 export GITHUB_EMAIL="gitea@kiam001.tk"
 
-export device="PL2"
+export device="yggdrasil"
 
 export ROM="LineageOS"
 export ROM_DIR="${WORKSPACE}/work"
