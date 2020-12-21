@@ -50,10 +50,6 @@ export tag=$( echo "${zip_name}-$(date +%H%M)" | sed 's|.zip||')
 if [ -e "${finalzip_path}" ]; then
 	echo "Build completed successfully in $((BUILD_DIFF / 60)) minute(s) and $((BUILD_DIFF % 60)) seconds"
 
-	echo "Uploading to Sourceforge "${sourceforgeprojekt}/${sourceforgefolder}""
-
-	scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null "${finalzip_path}" "${sourceforgeuser}@frs.sourceforge.net:/home/frs/project/${sourceforgeprojekt}/${sourceforgefolder}"
-
 	echo "Uploading to Gitea "${gitea_url}/${repo_owner}/${repo_name}""
 
 	drone-gitea-release --api-key "${GITEA_TOKEN}" --repo.owner "${repo_owner}" --repo.name "${repo_name}"  --commit.ref "${tag}" --base-url "${gitea_url}"  -title "${tag}" --note "${ROM} for ${device} Date: $(env TZ="${timezone}" date)" --files "${finalzip_path}"
@@ -90,19 +86,16 @@ if [ -e "${finalzip_path}" ]; then
 		telegram -M "Build completed successfully in $((BUILD_DIFF / 60)) minute(s) and $((BUILD_DIFF % 60)) seconds
 
 		Download ROM via Gitea: ["${zip_name}"]("${gitea_url}/${repo_owner}/${repo_name}/releases/download/${tag}/${zip_name}")
-		Download ROM via Sourceforge: ["${zip_name}"]("https://sourceforge.net/projects/${sourceforgeprojekt}/files/${sourceforgefolder}/${zip_name}/download")
 		Download recovery: ["recovery.img"]("${gitea_url}/${repo_owner}/${repo_name}/releases/download/${tag}/recovery.img")"
 	elif [ "${upload_boot}" == "true" ]; then
 		telegram -M "Build completed successfully in $((BUILD_DIFF / 60)) minute(s) and $((BUILD_DIFF % 60)) seconds
 
 		Download ROM via Gitea: ["${zip_name}"]("${gitea_url}/${repo_owner}/${repo_name}/releases/download/${tag}/${zip_name}")
-		Download ROM via Sourceforge: ["${zip_name}"]("https://sourceforge.net/projects/${sourceforgeprojekt}/files/${sourceforgefolder}/${zip_name}/download")
 		Download boot: ["boot.img"]("${gitea_url}/${repo_owner}/${repo_name}/releases/download/${tag}/boot.img")"
 	else
 		telegram -M "Build completed successfully in $((BUILD_DIFF / 60)) minute(s) and $((BUILD_DIFF % 60)) seconds
 
-		Download ROM via Gitea: ["${zip_name}"]("${gitea_url}/${repo_owner}/${repo_name}/releases/download/${tag}/${zip_name}")
-		Download ROM via Sourceforge: ["${zip_name}"]("https://sourceforge.net/projects/${sourceforgeprojekt}/files/${sourceforgefolder}/${zip_name}/download")"
+		Download ROM via Gitea: ["${zip_name}"]("${gitea_url}/${repo_owner}/${repo_name}/releases/download/${tag}/${zip_name}")"
 	fi
 	curl --data parse_mode=HTML --data chat_id=$TELEGRAM_CHAT --data sticker=CAADBQADGgEAAixuhBPbSa3YLUZ8DBYE --request POST https://api.telegram.org/bot$TELEGRAM_TOKEN/sendSticker
 
