@@ -29,3 +29,5 @@ export ccache_size="100"
 export jenkins="true"
 
 export timezone="UTC"
+
+export release_repo="kiam001/releases"

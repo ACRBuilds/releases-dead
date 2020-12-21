@@ -15,6 +15,7 @@ export GITEA_TOKEN=""
 export TELEGRAM_TOKEN=""
 export TELEGRAM_CHAT=""
 export BUILD_NUMBER=""
+export GITHUB_TOKEN=""
 if [ ! -d "${ROM_DIR}/out" ]; then
     source clean.sh
 else
