@@ -122,8 +122,8 @@ if [ -e "${finalzip_path}" ]; then
 
 		Download ROM via Gitea: ["${zip_name}"]("${gitea_url}/${repo_owner}/${repo_name}/releases/download/${tag}/${zip_name}")
 		Download ROM via Github: ["${zip_name}"]("https://github.com/${release_repo}/releases/download/${tag}/${zip_name}")
-		Download boot via Gitea: ["recovery.img"]("${gitea_url}/${repo_owner}/${repo_name}/releases/download/${tag}/boot.img")
-		Download boot via Github: ["recovery.img"]("https://github.com/${release_repo}/releases/download/${tag}/boot.img")"
+		Download boot via Gitea: ["boot.img"]("${gitea_url}/${repo_owner}/${repo_name}/releases/download/${tag}/boot.img")
+		Download boot via Github: ["boot.img"]("https://github.com/${release_repo}/releases/download/${tag}/boot.img")"
 	else
 		telegram -M "Build completed successfully in $((BUILD_DIFF / 60)) minute(s) and $((BUILD_DIFF % 60)) seconds
 
