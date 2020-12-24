@@ -6,7 +6,7 @@ export GITHUB_EMAIL="gitea@kiam001.tk"
 export device="PL2"
 
 export ROM="LineageOS"
-export ROM_DIR="${WORKSPACE}/work"
+export ROM_DIR="${WORKSPACE}/work/rom"
 export ROM_VERSION="Lineage 18.1"
 export official="false"
 export local_manifest_url="https://gitea.kiam001.tk/Buildtools/manifests/raw/branch/master/PL2.xml"

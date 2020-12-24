@@ -6,7 +6,7 @@ export GITHUB_EMAIL="gitea@kiam001.tk"
 export device="cedric"
 
 export ROM="PixelExperience"
-export ROM_DIR="${WORKSPACE}/work"
+export ROM_DIR="${WORKSPACE}/work/rom"
 export ROM_VERSION="ten plus"
 export official="false"
 export local_manifest_url="https://gitea.kiam001.tk/Buildtools/manifests/raw/branch/master/cedric.xml"
