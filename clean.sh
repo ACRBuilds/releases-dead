@@ -29,6 +29,8 @@ if [ ! -d "${ROM_DIR}" ]; then
 mkdir "${ROM_DIR}"
 fi
 
+cd "${ROM_DIR}"
+
 if [ ! -d "${ROM_DIR}/.repo" ]; then
 echo "Initializing repository..."
 repo init -u "${manifest_url}" -b "${branch}" --depth 1
