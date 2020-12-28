@@ -30,9 +30,6 @@ mkdir "${ROM_DIR}"
 fi
 cd "${ROM_DIR}"
 if [ -d "${ROM_DIR}/out" ]; then
-source build/envsetup.sh
-make clean -j$(nproc --all)
-make clobber -j$(nproc --all)
 fi
 
 if [ ! -d "${ROM_DIR}/.repo" ]; then
