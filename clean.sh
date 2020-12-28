@@ -28,9 +28,6 @@ cd ~
 if [ ! -d "${ROM_DIR}" ]; then
 mkdir "${ROM_DIR}"
 fi
-cd "${ROM_DIR}"
-if [ -d "${ROM_DIR}/out" ]; then
-fi
 
 if [ ! -d "${ROM_DIR}/.repo" ]; then
 echo "Initializing repository..."
