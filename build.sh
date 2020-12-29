@@ -10,6 +10,8 @@ else
 fi
 source build/envsetup.sh
 source "${my_dir}/${my_txt}"
+# Save devicename for overite (2/2)
+export device=$device_real
 source "${my_dir}/sourceforgeconfig.sh"
 if [ "${official}" == "true" ]; then
 	export CUSTOM_BUILD_TYPE="OFFICIAL"
