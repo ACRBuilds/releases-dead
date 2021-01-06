@@ -1,0 +1,31 @@
+#!/bin/bash
+
+export GITHUB_USER="kiam001"
+export GITHUB_EMAIL="gitea@kiam001.tk"
+
+export DEVICE="cedric"
+export ROM="Lineage 17.1 with 4.9 Kernel"
+export ROM_DIR="${WORKSPACE}/work/rom"
+export ROM_VERSION="Testing for Cedric"
+export official="false"
+export local_manifest_url="https://gitea.kiam001.tk/Buildtools/manifests/raw/branch/master/cedirc-kernel-4.9.xml"
+export manifest_url="https://github.com/LineageOS/android"
+export rom_vendor_name="lineage"
+export branch="lineage-17.1"
+export bacon="bacon"
+export buildtype="eng"
+export clean="installclean"
+export upload_recovery="false"
+export upload_boot="false"
+export repo_name="releases"
+export repo_owner="Buildtools"
+export gitea_url="https://gitea.kiam001.tk"
+
+export ccache="true"
+export ccache_size="100"
+
+export jenkins="true"
+
+export timezone="UTC"
+
+export release_repo="kiam001/releases"
