@@ -35,7 +35,7 @@ if [ "${clean}" == "clean" ]; then
 elif [ "${clean}" == "installclean" ]; then
 	mka installclean
 fi
-mka "${bacon}"
+mka "${bacon}" -j$(nproc --all)
 BUILD_END=$(date +"%s")
 BUILD_DIFF=$((BUILD_END - BUILD_START))
 
