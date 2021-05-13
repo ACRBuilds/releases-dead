@@ -30,10 +30,10 @@ lunch "${rom_vendor_name}_${device}-${buildtype}"
 rm "${outdir}"/*2021*.zip
 rm "${outdir}"/*2021*.zip.md5
 if [ "${clean}" == "clean" ]; then
-	mka clean
-	mka clobber
+	make clean
+	make clobber
 elif [ "${clean}" == "installclean" ]; then
-	mka installclean
+	make installclean
 fi
 make "${bacon}" -j$(nproc --all)
 BUILD_END=$(date +"%s")
