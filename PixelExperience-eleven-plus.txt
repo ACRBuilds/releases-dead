@@ -1,0 +1,28 @@
+#!/bin/bash
+
+export GITHUB_USER="kiam001"
+export GITHUB_EMAIL="gitea@kiam001.tk"
+
+export ROM="PixelExperience"
+export ROM_DIR="${WORKSPACE}/work/rom"
+export ROM_VERSION="Eleven Plus"
+export official="false"
+export local_manifest_url="https://gitea.kiam001.tk/Buildtools/manifests/raw/branch/master/pe-elven.xml"
+export manifest_url="https://github.com/PixelExperience/manifest"
+export rom_vendor_name="aosp"
+export branch="eleven-plus"
+export bacon="bacon"
+export buildtype=""
+export clean="installclean"
+export repo_name="releases"
+export repo_owner="Buildtools"
+export gitea_url="https://gitea.kiam001.tk"
+
+export ccache="true"
+export ccache_size="100"
+
+export jenkins="true"
+
+export timezone="UTC"
+
+export release_repo="kiam001/releases"
