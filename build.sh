@@ -58,17 +58,9 @@ if [ -e "${finalzip_path}" ]; then
 
 	Date: $(env TZ="${timezone}" date)" "${finalzip_path}"
 
-	echo "Uploading ROM to Gitea ${gitea_url}/${repo_owner}/${repo_name}/releases/download/${tag}/${zip_name}"
-
-	drone-gitea-release --api-key "${GITEA_TOKEN}" --repo.owner "${repo_owner}" --repo.name "${repo_name}"  --commit.ref "${tag}" --base-url "${gitea_url}"  -title "${tag}" --note "${ROM} for ${device} Date: $(env TZ="${timezone}" date)" --files "${finalzip_path}"
-
 	if [ "${upload_recovery}" == "true" ]; then
 		if [ -e "${img_path}" ]; then
 			echo
-
-			"Uploading recovery to Gitea ${gitea_url}/${repo_owner}/${repo_name}/releases/download/${tag}/recovery.img"
-
-			drone-gitea-release --api-key "${GITEA_TOKEN}" --repo.owner "${repo_owner}" --repo.name "${repo_name}"  --commit.ref "${tag}" --base-url "${gitea_url}"  --title "${tag}" --note "${ROM} for ${device} Date: $(env TZ="${timezone}" date)" --files "${img_path}"
 
 			echo "Uploading recovery to Github https://github.com/${release_repo}/releases/download/${tag}/recovery.img"
 
@@ -87,10 +79,6 @@ if [ -e "${finalzip_path}" ]; then
 	if [ "${upload_boot}" == "true" ]; then
 		if [ -e "${boot_path}" ]; then
 			echo
-
-			"Uploading recovery to Gitea ${gitea_url}/${repo_owner}/${repo_name}/releases/download/${tag}/boot.img"
-
-			drone-gitea-release --api-key "${GITEA_TOKEN}" --repo.owner "${repo_owner}" --repo.name "${repo_name}"  --commit.ref "${tag}" --base-url "${gitea_url}"  --title "${tag}" --note "${ROM} for ${device} Date: $(env TZ="${timezone}" date)" --files "${boot_path}"
 
 			echo "Uploading recovery to Github https://github.com/${release_repo}/releases/download/${tag}/boot.img"
 
@@ -115,22 +103,17 @@ if [ -e "${finalzip_path}" ]; then
 	if [ "${upload_recovery}" == "true" ]; then
 		telegram -M "Build completed successfully in $((BUILD_DIFF / 60)) minute(s) and $((BUILD_DIFF % 60)) seconds
 
-		Download ROM via Gitea: ["${zip_name}"]("${gitea_url}/${repo_owner}/${repo_name}/releases/download/${tag}/${zip_name}")
 		Download ROM via Github: ["${zip_name}"]("https://github.com/${release_repo}/releases/download/${tag}/${zip_name}")
-		Download recovery via Gitea: ["recovery.img"]("${gitea_url}/${repo_owner}/${repo_name}/releases/download/${tag}/recovery.img")
 		Download recovery via Github: ["recovery.img"]("https://github.com/${release_repo}/releases/download/${tag}/recovery.img")"
 	elif [ "${upload_boot}" == "true" ]; then
 		telegram -M "Build completed successfully in $((BUILD_DIFF / 60)) minute(s) and $((BUILD_DIFF % 60)) seconds
 
-		Download ROM via Gitea: ["${zip_name}"]("${gitea_url}/${repo_owner}/${repo_name}/releases/download/${tag}/${zip_name}")
 		Download ROM via Github: ["${zip_name}"]("https://github.com/${release_repo}/releases/download/${tag}/${zip_name}")
-		Download boot via Gitea: ["boot.img"]("${gitea_url}/${repo_owner}/${repo_name}/releases/download/${tag}/boot.img")
 		Download boot via Github: ["boot.img"]("https://github.com/${release_repo}/releases/download/${tag}/boot.img")"
 	else
 		telegram -M "Build completed successfully in $((BUILD_DIFF / 60)) minute(s) and $((BUILD_DIFF % 60)) seconds
 
 		Download ROM via Github: ["${zip_name}"]("https://github.com/${release_repo}/releases/download/${tag}/${zip_name}")
-		Download ROM via Gitea: ["${zip_name}"]("${gitea_url}/${repo_owner}/${repo_name}/releases/download/${tag}/${zip_name}")"
 	fi
 	curl --data parse_mode=HTML --data chat_id=$TELEGRAM_CHAT --data sticker=CAADBQADGgEAAixuhBPbSa3YLUZ8DBYE --request POST https://api.telegram.org/bot$TELEGRAM_TOKEN/sendSticker
 
