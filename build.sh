@@ -113,7 +113,7 @@ if [ -e "${finalzip_path}" ]; then
 	else
 		telegram -M "Build completed successfully in $((BUILD_DIFF / 60)) minute(s) and $((BUILD_DIFF % 60)) seconds
 
-		Download ROM via Github: ["${zip_name}"]("https://github.com/${release_repo}/releases/download/${tag}/${zip_name}")
+		Download ROM via Github: ["${zip_name}"]("https://github.com/${release_repo}/releases/download/${tag}/${zip_name}")"
 	fi
 	curl --data parse_mode=HTML --data chat_id=$TELEGRAM_CHAT --data sticker=CAADBQADGgEAAixuhBPbSa3YLUZ8DBYE --request POST https://api.telegram.org/bot$TELEGRAM_TOKEN/sendSticker
 
