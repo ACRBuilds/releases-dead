@@ -1,4 +1,6 @@
 #!/bin/bash
+ccache -o compression=true
+echo ${WORKSPACE}
 git clone https://gitea.kiam001.tk/Buildtools/releases -b master work
 cd work
 curl https://storage.googleapis.com/git-repo-downloads/repo > bin/repo
@@ -10,13 +12,11 @@ git fetch --all
 git checkout origin/"${branch}"
 git branch -D "${branch}"
 git checkout -b "${branch}"
-export my_txt=defaultconf.txt
-export GITEA_TOKEN=""
-export TELEGRAM_TOKEN=""
-export TELEGRAM_CHAT=""
+export my_txt=ROM_NAME_HERE.txt
+export TELEGRAM_TOKEN="TELEGRAM_TOKEN_HERE"
+export TELEGRAM_CHAT="TELEGRAM_CHAT_HERE"
+export GITHUB_TOKEN="GITHUB_TOKEN_HERE"
 export BUILD_NUMBER=""
-export GITHUB_TOKEN=""
-source config.sh
 if [ ! -d "${ROM_DIR}/out" ]; then
     source clean.sh
 else
