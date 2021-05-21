@@ -17,6 +17,7 @@ export TELEGRAM_TOKEN="TELEGRAM_TOKEN_HERE"
 export TELEGRAM_CHAT="TELEGRAM_CHAT_HERE"
 export GITHUB_TOKEN="GITHUB_TOKEN_HERE"
 export BUILD_NUMBER=""
+source "$my_txt"
 if [ ! -d "${ROM_DIR}/out" ]; then
     source clean.sh
 else
