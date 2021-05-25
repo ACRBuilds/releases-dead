@@ -1,0 +1,28 @@
+#!/bin/bash
+
+export GITHUB_USER="kiam001"
+export GITHUB_EMAIL="gitea@kiam001.tk"
+
+export ROM="Project Sakura"
+export ROM_DIR="${WORKSPACE}/work/rom"
+export ROM_VERSION="5"
+export official="false"
+export local_manifest_url="https://raw.githubusercontent.com/Sakura-Devices/Manifests_vayu/main/sakura.xml"
+export manifest_url="https://github.com/ProjectSakura/android"
+export rom_vendor_name="lineage"
+export branch="11"
+export bacon="bacon"
+export buildtype=""
+export clean="installclean"
+export repo_name="releases"
+export repo_owner="Buildtools"
+export gitea_url="https://gitea.kiam001.tk"
+
+export ccache="true"
+export ccache_size="100"
+
+export jenkins="true"
+
+export timezone="UTC"
+
+export release_repo="kiam001/releases"
