@@ -4,7 +4,7 @@ export GITHUB_USER="kiam001"
 export GITHUB_EMAIL="gitea@kiam001.tk"
 
 export ROM="Project Sakura"
-export ROM_DIR="${WORKSPACE}/work/rom"
+export ROM_DIR="${WORKSPACE}/../Sakura-Offical-vayu/work/rom"
 export ROM_VERSION="5"
 export official="false"
 export local_manifest_url="https://gitea.kiam001.tk/Buildtools/manifests/raw/branch/master/lineage-18.1.xml"
