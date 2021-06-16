@@ -1,0 +1,30 @@
+#!/bin/bash
+
+export GITHUB_USER="alexwcrafter"
+export GITHUB_EMAIL="kontakt@ayokaacr.de"
+
+export device="cedric"
+
+export ROM="aosp"
+export ROM_DIR="${WORKSPACE}/rom"
+export ROM_VERSION="11"
+export official="false"
+export local_manifest_url="https://github.com/ACRBuilds/cedric-manifest/raw/main/manifest.xml"
+export manifest_url="https://github.com/PixelPlusUI/manifest"
+export rom_vendor_name="ppui"
+export branch="eleven"
+export bacon="bacon"
+export buildtype="userdebug"
+export clean="installclean"
+export upload_recovery="false"
+export upload_boot="false"
+export repo_name="releases"
+export repo_owner="ACRBuilds"
+
+export ccache="true"
+export ccache_size="100"
+
+export jenkins="true"
+
+export timezone="UTC"
+export release_repo="ACRBuilds/releases"
